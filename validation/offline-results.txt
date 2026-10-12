@@ -1,0 +1,31 @@
+PASS: One AWS trust statement
+PASS: Exact OIDC provider and AssumeRoleWithWebIdentity action
+PASS: AWS audience and subject are exact
+PASS: Approved AWS claims
+PASS: Wrong audience
+PASS: Wrong repository
+PASS: Wrong environment
+PASS: Azure exact issuer, subject, audience
+PASS: Azure runtime role scoped to catalog container
+PASS: Azure deployment role scoped to individual app
+PASS: Uploader can put intended object
+PASS: Uploader cannot get object
+PASS: Uploader cannot delete object
+PASS: Uploader cannot list bucket
+PASS: Uploader cannot put outside prefix
+PASS: Uploader cannot write another bucket
+PASS: Reader can read intended object
+PASS: Reader can list reports prefix
+PASS: Reader can list descendant prefix
+PASS: Reader cannot list full bucket
+PASS: Reader cannot list lookalike prefix
+PASS: Reader cannot write
+PASS: Reader cannot delete
+PASS: Reader cannot read outside prefix
+PASS: Uploader has no unrestricted action or resource
+PASS: Reader has no unrestricted action or resource
+PASS: SVG parses and declares title and description
+PASS: Mermaid source includes both cloud identity flows
+
+28 offline checks passed. No cloud resources or effective authorization tested.
+
