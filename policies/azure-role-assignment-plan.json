@@ -1,0 +1,17 @@
+{
+  "status": "Illustrative plan only; not an ARM deployment template",
+  "assignments": [
+    {
+      "principal": "catalog-system-assigned-managed-identity",
+      "roleName": "Storage Blob Data Reader",
+      "roleDefinitionId": "2a2b9908-6ea1-4ae2-8e65-a410df84e7d1",
+      "scope": "/subscriptions/EXAMPLE-SUBSCRIPTION/resourceGroups/ns-prod-catalog/providers/Microsoft.Storage/storageAccounts/EXAMPLE-STORAGE/blobServices/default/containers/catalog-published"
+    },
+    {
+      "principal": "github-catalog-deployment-service-principal",
+      "roleName": "Website Contributor",
+      "roleDefinitionId": "de139f84-1756-47ae-9be6-808fbbe84772",
+      "scope": "/subscriptions/EXAMPLE-SUBSCRIPTION/resourceGroups/ns-prod-catalog/providers/Microsoft.Web/sites/EXAMPLE-CATALOG-APP"
+    }
+  ]
+}
