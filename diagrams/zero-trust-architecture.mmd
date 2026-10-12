@@ -1,0 +1,18 @@
+flowchart LR
+  employees[Employees and separate admin accounts] -->|SSO / device and MFA policy| entra[Microsoft Entra ID]
+  entra -->|App token + application role| catalog[Azure catalog API]
+  entra -->|Azure RBAC / proposed PIM| azadmin[Azure resource administration]
+  entra -->|SAML sign-in| center[AWS IAM Identity Center]
+  entra -.->|SCIM provisioning; separate from grants| center
+  center -->|Permission set / temporary session| reports[S3 reports prefix]
+  github[Protected GitHub production environment] -->|OIDC token exchange / exact subject| azci[Entra CI service principal]
+  azci -->|Resource-scoped deployment role| catalog
+  catalog -->|Separate managed identity / Blob Data Reader| blob[Private catalog blob container]
+  github -->|OIDC / exact subject and audience| sts[AWS STS CI role]
+  sts -->|PutObject reports prefix only| reports
+  lambda[Reporting Lambda / execution role] -->|GetObject reports prefix only| reports
+  entra -.->|Sign-in and audit telemetry| monitoring[Separate security monitoring and retention]
+  catalog -.->|Azure diagnostics| monitoring
+  reports -.->|Configured CloudTrail S3 data events| monitoring
+  recovery[Independent emergency recovery] -.->|Monitored runbook; exceptional authorization| entra
+  recovery -.->|AWS account recovery procedure| center

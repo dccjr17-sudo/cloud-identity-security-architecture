@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1580" height="1190" viewBox="0 0 1580 1190" role="img" aria-labelledby="title desc">
+<title id="title">Northstar Retail cloud identity architecture</title>
+<desc id="desc">Six separate identity paths: Azure administrators, AWS workforce federation, Azure deployment federation, AWS upload federation, Azure managed identity, and AWS Lambda execution role. Monitoring collects telemetry. All controls are proposed, not deployed.</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#60728b"/></marker></defs>
+<rect width="1580" height="1190" fill="#f4f7fb"/>
+<text x="40" y="60" font-family="Segoe UI,Arial,sans-serif" font-size="36" font-weight="700" fill="#142c48">Northstar Retail</text>
+<text x="40" y="94" font-family="Segoe UI,Arial,sans-serif" font-size="21" font-weight="400" fill="#52647a">Cloud identity security architecture  |  Proposed design • no cloud deployment</text>
+<text x="40" y="141" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#52647a">IDENTITY</text>
+<text x="420" y="141" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#52647a">AUTHENTICATION / TRUST</text>
+<text x="800" y="141" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#52647a">AUTHORIZATION</text>
+<text x="1180" y="141" font-family="Segoe UI,Arial,sans-serif" font-size="15" font-weight="700" fill="#52647a">RESOURCE / BOUNDARY</text>
+<rect x="40" y="165" width="300" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="55" y="197" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Azure operators</text>
+<text x="55" y="225" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Separate admin accounts</text>
+<text x="55" y="247" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Managed devices; strong MFA</text>
+<rect x="420" y="165" width="300" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="435" y="197" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Microsoft Entra ID</text>
+<text x="435" y="225" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Conditional Access pilot</text>
+<text x="435" y="247" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Identity and device checks</text>
+<rect x="800" y="165" width="300" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="815" y="197" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Azure RBAC + PIM</text>
+<text x="815" y="225" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Reader + eligible deployment</text>
+<text x="815" y="247" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Approval; 60-minute proposal</text>
+<rect x="1180" y="165" width="360" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="1195" y="197" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Catalog App Service</text>
+<text x="1195" y="225" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Resource-scoped administration</text>
+<text x="1195" y="247" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Deployment can use runtime rights</text>
+<path d="M340 217 H420" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="347" y="206" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">SSO</text>
+<path d="M720 217 H800" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="727" y="206" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Token</text>
+<path d="M1100 217 H1180" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1107" y="206" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Scoped role</text>
+<rect x="40" y="305" width="300" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="55" y="337" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">AWS report readers</text>
+<text x="55" y="365" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Workforce accounts</text>
+<text x="55" y="387" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Approved analytics group</text>
+<rect x="420" y="305" width="300" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="435" y="337" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">Microsoft Entra ID</text>
+<text x="435" y="365" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">SAML authentication</text>
+<text x="435" y="387" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">SCIM provisioning separately</text>
+<rect x="800" y="305" width="300" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="815" y="337" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">IAM Identity Center</text>
+<text x="815" y="365" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Account + permission set</text>
+<text x="815" y="387" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Temporary workforce sessions</text>
+<rect x="1180" y="305" width="360" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="1195" y="337" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">S3 reports/ prefix</text>
+<text x="1195" y="365" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">GetObject + constrained listing</text>
+<text x="1195" y="387" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">No write or delete in example</text>
+<path d="M340 357 H420" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="347" y="346" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">SSO</text>
+<path d="M720 357 H800" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="727" y="346" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">SAML</text>
+<path d="M1100 357 H1180" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1107" y="346" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Session</text>
+<rect x="40" y="445" width="300" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="55" y="477" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Azure CI workflow</text>
+<text x="55" y="505" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Protected GitHub environment</text>
+<text x="55" y="527" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Reviewed production deployments</text>
+<rect x="420" y="445" width="300" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="435" y="477" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Entra CI identity</text>
+<text x="435" y="505" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Exact OIDC issuer / subject</text>
+<text x="435" y="527" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Token-exchange audience</text>
+<rect x="800" y="445" width="300" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="815" y="477" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Scoped Azure role</text>
+<text x="815" y="505" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Website Contributor</text>
+<text x="815" y="527" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">No RBAC administration grant</text>
+<rect x="1180" y="445" width="360" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="1195" y="477" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Catalog App Service</text>
+<text x="1195" y="505" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Deploy + manage this app</text>
+<text x="1195" y="527" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Separate runtime identity</text>
+<path d="M340 497 H420" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="347" y="486" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">OIDC</text>
+<path d="M720 497 H800" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="727" y="486" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Token</text>
+<path d="M1100 497 H1180" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1107" y="486" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Deploy</text>
+<rect x="40" y="585" width="300" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="55" y="617" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">AWS upload workflow</text>
+<text x="55" y="645" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Protected GitHub environment</text>
+<text x="55" y="667" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Exact repository + environment</text>
+<rect x="420" y="585" width="300" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="435" y="617" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">AWS STS CI role</text>
+<text x="435" y="645" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Exact OIDC sub + aud</text>
+<text x="435" y="667" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Temporary credentials</text>
+<rect x="800" y="585" width="300" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="815" y="617" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">S3 upload policy</text>
+<text x="815" y="645" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">PutObject on reports/*</text>
+<text x="815" y="667" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Overwrite risk; version artifacts</text>
+<rect x="1180" y="585" width="360" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="1195" y="617" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">S3 reports/ prefix</text>
+<text x="1195" y="645" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">One bucket; no broad grant</text>
+<text x="1195" y="667" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">No read, list, or delete in example</text>
+<path d="M340 637 H420" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="347" y="626" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">OIDC</text>
+<path d="M720 637 H800" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="727" y="626" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Session</text>
+<path d="M1100 637 H1180" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1107" y="626" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Upload</text>
+<rect x="40" y="725" width="300" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="55" y="757" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Catalog runtime</text>
+<text x="55" y="785" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Azure App Service workload</text>
+<text x="55" y="807" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Private data path + tested DNS</text>
+<rect x="420" y="725" width="300" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="435" y="757" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Managed identity</text>
+<text x="435" y="785" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">System-assigned to this app</text>
+<text x="435" y="807" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">No stored client secret</text>
+<rect x="800" y="725" width="300" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="815" y="757" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Blob Data Reader</text>
+<text x="815" y="785" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">One container scope</text>
+<text x="815" y="807" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Control/data planes differ</text>
+<rect x="1180" y="725" width="360" height="100" rx="13" fill="white" stroke="#1976b8" stroke-width="2"/>
+<text x="1195" y="757" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#1976b8">Catalog blob container</text>
+<text x="1195" y="785" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">catalog-published only</text>
+<text x="1195" y="807" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Read access; no write grant</text>
+<path d="M340 777 H420" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="347" y="766" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Identity</text>
+<path d="M720 777 H800" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="727" y="766" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Token</text>
+<path d="M1100 777 H1180" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1107" y="766" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Read</text>
+<rect x="40" y="865" width="300" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="55" y="897" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">Report runtime</text>
+<text x="55" y="925" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">AWS Lambda workload</text>
+<text x="55" y="947" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Separate environment role</text>
+<rect x="420" y="865" width="300" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="435" y="897" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">Execution role</text>
+<text x="435" y="925" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Lambda service trust</text>
+<text x="435" y="947" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Temporary credentials</text>
+<rect x="800" y="865" width="300" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="815" y="897" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">Report read policy</text>
+<text x="815" y="925" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">GetObject + prefix listing</text>
+<text x="815" y="947" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Logging permission separate</text>
+<rect x="1180" y="865" width="360" height="100" rx="13" fill="white" stroke="#cc752b" stroke-width="2"/>
+<text x="1195" y="897" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" fill="#cc752b">S3 reports/ prefix</text>
+<text x="1195" y="925" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">Same narrow reader namespace</text>
+<text x="1195" y="947" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#25374e">No bucket administration</text>
+<path d="M340 917 H420" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="347" y="906" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Role</text>
+<path d="M720 917 H800" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="727" y="906" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Session</text>
+<path d="M1100 917 H1180" fill="none" stroke="#60728b" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="1107" y="906" font-family="Segoe UI,Arial,sans-serif" font-size="13" font-weight="400" fill="#52647a">Read</text>
+<rect x="40" y="1000" width="1500" height="77" rx="12" fill="#e2ebf5"/>
+<text x="58" y="1030" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#142c48">MONITORING + RECOVERY</text>
+<text x="58" y="1062" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="400" fill="#25374e">Entra audit/sign-in • Azure diagnostics • configured CloudTrail S3 data events • independent, monitored recovery runbooks</text>
+<text x="40" y="1118" font-family="Segoe UI,Arial,sans-serif" font-size="18" font-weight="700" fill="#25374e">Verify explicitly • grant the minimum scope • assume compromise • distinguish sign-in from resource authorization</text>
+<text x="40" y="1154" font-family="Segoe UI,Arial,sans-serif" font-size="17" font-weight="400" fill="#52647a">Separate requests and cloud sessions have different lifetimes. Exact CI trust still requires protected environments and reviewed code.</text>
+</svg>
